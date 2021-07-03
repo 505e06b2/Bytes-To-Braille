@@ -1,0 +1,80 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: monospace;
+}
+
+#main-pane {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: #333;
+	color: #eee;
+	font-size: 150%;
+	overflow-y: scroll;
+}
+
+#main-pane * {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	display: inline-block;
+	line-height: 175%;
+}
+
+#main-pane #braille-content {
+	max-width: 280px;
+	min-width: 280px;
+	min-height: 80%;
+	letter-spacing: 3px;
+	background: none;
+	border: none;
+	resize: none;
+	margin: 0px;
+	padding: 0px;
+	outline: none;
+	left: 110px;
+}
+
+#main-pane #braille-content span {
+	position: relative;
+	color: #eee;
+	z-index: 5;
+	pointer-events: none;
+}
+
+#bottom-pane #braille-char::after,
+#main-pane #braille-content span::after {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: -1;
+	content: "⣿";
+	color: #555;
+}
+
+#main-pane #braille-ascii {
+	left: 410px;
+}
+
+#bottom-pane {
+	display: flex;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: #222;
+	color: #eee;
+	font-size: 125%;
+}
+
+#bottom-pane * {
+	position: relative;
+	display: inline-block;
+	flex: 1 1 100%;
+	text-align: center;
+}
